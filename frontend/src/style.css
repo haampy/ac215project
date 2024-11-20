@@ -1,0 +1,316 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background-color: #171217;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-x: visible;
+}
+
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  overflow: visible; /* Ensure this container allows visible overflow */
+  position: relative; /* Maintain positioning context */
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.031);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  backdrop-filter: blur(0.4rem);
+  width: 90%; /* Add this to control the width */
+  max-width: 29rem; /* Move max-width here */
+  margin: 0 auto; /* Add this to center the main container */
+  overflow: visible; /* Allow visible overflow */
+  position: relative; /* Maintain proper positioning */
+}
+
+#main .inner {
+  width: 100%;
+  padding: 1rem; /* Reduce padding for mobile */
+  margin: 0 auto;
+}
+
+.page-two #main {
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 768px) {
+  #wrapper {
+    padding: 0.5rem; /* Reduce wrapper padding on mobile */
+  }
+
+  #main {
+    width: 95%; /* Slightly wider on mobile */
+    padding: 1rem; /* Reduce padding on mobile */
+  }
+
+  #main .inner {
+    padding: 0.75rem; /* Further reduce inner padding on mobile */
+  }
+  
+  /* Adjust the button container for mobile */
+  .buttons li a {
+    padding: 0.75rem 1rem; /* Slightly reduce button padding */
+    width: auto; /* Let button width adjust to content */
+    min-width: 150px; /* Ensure minimum width */
+  }
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: fixed; /* Ensure it stays in a fixed position at the top */
+    z-index: 1000; /* Bring it to the front */
+    width: 100%; /* Full width for alignment */
+  }
+  
+  #text02 {
+    color: #8C9E72 !important;
+    font-family: 'Sora', sans-serif;
+    letter-spacing: 0.225rem;
+    font-size: 0.75em;
+    line-height: 1.75;
+    font-weight: 600;
+    text-transform: uppercase;
+  } 
+
+#text02.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#text04 {
+  color: rgba(255, 255, 255, 0);
+  font-family: 'Sora', sans-serif;
+  letter-spacing: 0.025rem;
+  font-size: 2.25em;
+  line-height: 1.25;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#text04.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#text04_2 {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Sora', sans-serif;
+    letter-spacing: 0.025rem;
+    font-size: 2.25em;
+    line-height: 1.25;
+    font-weight: 700;
+    opacity: 0;
+    width: 90%; /* Adjust this percentage for desired width */
+    max-width: none; /* Ensure it's not constrained by a max-width */
+    margin: 0 auto; /* Center the text horizontally */
+    /* transform: translateX(-20px);
+    transition: opacity 1s ease, transform 1s ease; */
+  }
+  
+  #text04_2.visible {
+    opacity: 1;
+    /* transform: translateX(0); */
+  }
+
+#text07 {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Sora', sans-serif;
+  letter-spacing: 0.025rem;
+  font-size: 1em;
+  line-height: 1.625;
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 0.375s ease;
+}
+
+#text07.visible {
+  opacity: 1;
+}
+
+#text07_2 {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Sora', sans-serif;
+    letter-spacing: 0.025rem;
+    font-size: 1em;
+    line-height: 1.625;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.375s ease;
+}
+  
+#text07_2.visible {
+    opacity: 1;
+}
+
+/* Button styles */
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.buttons.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.buttons li a {
+  display: inline-flex;
+  width: 100%;
+  padding: 0.78125rem 1.25rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  border-radius: 0.625rem;
+  background-color: #8C9E72;
+  color: #FFFFFF;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.375s ease;
+}
+
+.buttons li a:hover {
+  transform: scale(0.975);
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.375s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+.fade-in-top {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-down.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.custom-cursor::after {
+    content: '';
+    right: -0.1em;
+    animation: blink 1s step-start infinite;
+    opacity: 0.5;
+    height: 1em;
+    border-right: 1px solid currentColor;
+    margin-left: 10;
+}
+  
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  @keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.transparent-box {
+  border: 0px solid rgba(150, 150, 150, 0.7);
+  background-color: transparent; /* No background */
+  color: rgba(255, 255, 255, 0.8); /* Text color */
+  padding: 0.5rem; /* Padding inside the box */
+  margin: 0.5rem 0; /* Spacing between boxes */
+  width: 100%; /* Stretch to the edges of the gray container */
+  box-sizing: border-box; /* Include padding and border in the width */
+  text-align: left; /* Align text to the left */
+  display: inline-block; /* Fit height to content */
+  border-radius: 8px; /* Add rounded corners */
+  font-family: 'Sora', sans-serif;
+  position: relative; /* Ensure child elements are positioned correctly */
+  overflow: visible;
+  padding-left: -10px;
+}
+
+.box-line {
+  width: 100%; /* Match the width of the parent box */
+  height: 0.8px; /* Thin line */
+  background-color: rgba(203, 200, 200, 0.8); /* Same color as the text */
+  margin-top: 0.5rem; /* Add space between the text and the line */
+}
+
+input::placeholder {
+  color: rgba(207, 204, 204, 0.7); /* Placeholder color */
+  opacity: 0.8; /* Optional: adjust opacity */
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.message.bot::before {
+  content: '';
+  position: absolute;
+  left: -5px; /* Keeps the desired position */
+  top: 10px; /* Adjusts alignment with the first line */
+  width: 10px; /* Circle diameter */
+  height: 10px; /* Circle diameter */
+  background-color: white; /* Circle color */
+  border-radius: 50%; /* Make it a circle */
+}
+
+.chat-container {
+  padding-left: 10px; /* Add enough padding to accommodate the circle */
+}
+

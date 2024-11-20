@@ -1,0 +1,34 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+protobuf = "3.20.3"
+pandas = "*"
+Pillow = "*"
+scikit-learn = "*"
+google-cloud-storage = "*"
+google-generativeai = "*"
+google-cloud-aiplatform = "*"
+gcsfs = "*"
+numpy = "<2.0"
+tqdm = "*"
+google-api-python-client = "*"
+paddlepaddle = "*"
+paddleocr = "*"
+langchain = "*"
+chromadb = "*"
+langchain-community = "*"
+python-Levenshtein = "*"
+vertexai = "*"
+torch = "*"
+torchvision = "*"
+opencv-python = "*"
+
+[dev-packages]
+pytest = "*"
+black = "*"
+
+[requires]
+python_version = "3.9"
